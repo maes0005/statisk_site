@@ -1,0 +1,125 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family:
+    -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue",
+    helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+}
+
+h2 {
+  font-size: 45px;
+}
+
+/* FORSIDE */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.category {
+  margin: 5rem;
+}
+
+.categorylist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.categorylist a {
+  background-color: rgb(194, 193, 181);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 7rem;
+  padding: 2.5rem;
+  font-size: 20px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue",
+    helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+}
+
+.categorylist a:hover {
+  background-color: rgb(169, 167, 150);
+}
+
+/* PRODUCTLIST */
+.productlist main h2 {
+  grid-column: 1/-1;
+}
+
+.productlist main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin: 1em 5em 5em 5em;
+}
+
+.smallProduct img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.productlist article {
+  margin-bottom: 1rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.productlist article h3 {
+  font-size: 19px;
+  margin: 0.5rem 0;
+  line-height: 1.2;
+}
+
+.discounted p:last-child {
+  background-color: #ff0000;
+  color: black;
+  padding: 0.5rem;
+  font-size: 18px;
+}
+
+.productlist article.onSale .price span {
+  display: initial;
+  text-decoration: line-through;
+  color: #ff0000;
+}
+
+.productlist article.onSale .discounted {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productlist article .discounted {
+  display: none;
+}
+
+.subtle {
+  color: #c0bfc0;
+  font-size: 17px;
+}
+
+.productlist article.soldOut::before {
+  content: "Sold Out";
+  position: absolute;
+  background: #272727;
+  color: white;
+  padding: 1rem;
+}
+
+.productlist article.soldOut img {
+  opacity: 0.5;
+}
