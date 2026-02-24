@@ -123,3 +123,41 @@ a {
 .productlist article.soldOut img {
   opacity: 0.5;
 }
+
+/* PRODUCT */
+.product main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h2 {
+  font-size: 45px;
+  margin-top: 1em;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 18px;
+  color: #272727;
+}
+
+button {
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+  border: 2px solid #f6f6f6;
+  color: #343334;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
