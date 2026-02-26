@@ -39,14 +39,14 @@ a {
   margin: 5rem;
 }
 
-.categorylist {
+#linkcontainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 1rem;
 }
 
-.categorylist a {
+#linkcontainer a {
   background-color: #fdfaea;
   color: #6c6e43;
   padding: 10px 20px;
@@ -61,7 +61,7 @@ a {
     helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
 }
 
-.categorylist a:hover {
+#linkcontainer a:hover {
   background-color: #e3dfc7;
 }
 
