@@ -8,10 +8,12 @@ function getData() {
 }
 
 function showData(data) {
-  console.log(data);
-  data.forEach((kategori) => {
-    container.innerHTML += `<a href="productlist.html?category=${kategori.category}">${kategori.category}</a>`;
-  });
+  let markup = "";
+  data.forEach(
+    (kategori) =>
+      (markup += `<a href="productlist.html?category=${kategori.category}">${kategori.category}</a>`),
+  );
+  container.innerHTML = markup;
 }
 
 getData();
