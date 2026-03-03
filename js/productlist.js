@@ -1,10 +1,7 @@
 const kategori = new URLSearchParams(window.location.search).get("category");
-
-// console.log(kategori);
+const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${kategori}`;
 
 const container = document.querySelector("main");
-
-const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${kategori}`;
 
 function getData() {
   fetch(endpoint)
@@ -16,8 +13,7 @@ function showData(json) {
   console.table(json);
   let markup = "";
   json.forEach((element) => {
-    // console.log(element);
-    markup += ` <a href="productlist.html">
+    markup += ` <a href="productdetails.html?id=${element.id}">
         <article class="smallProduct onSale soldOut">
           <img
             src="https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp"
