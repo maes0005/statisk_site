@@ -15,7 +15,7 @@ function showData(json) {
    <figure>
         <img
           src="https://kea-alt-del.dk/t7/images/webp/640/${json.id}.webp"
-          alt="Produktbillede"
+          alt="${json.productdisplayname}"
           class="productImage"
         />
         <span class="saleLabel"></span>
