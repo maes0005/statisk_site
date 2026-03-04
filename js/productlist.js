@@ -13,11 +13,15 @@ function showData(json) {
   console.table(json);
   let markup = "";
   json.forEach((element) => {
+    const newPrice = element.discount
+      ? Math.round(element.price - (element.price * element.discount) / 100)
+      : null;
     markup += ` <a href="productdetails.html?id=${element.id}">
-        <article class="smallProduct onSale soldOut">
+        <article class=" ${element.soldout ? "soldOut" : ""} 
+          ${element.discount ? "onSale" : ""}">
           <img
             src="https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp"
-            alt="product image"
+            alt="${element.productdisplayname}"
           />
           <h3>${element.productdisplayname}</h3>
           <p class="subtle">Taske | Puma</p>
