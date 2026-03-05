@@ -1,15 +1,35 @@
+document
+  .querySelectorAll(".filters button")
+  .forEach((knap) => knap.addEventListener("click", filter));
+
 const kategori = new URLSearchParams(window.location.search).get("category");
 const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${kategori}`;
 
-const container = document.querySelector("main");
+const container = document.querySelector(".productContainer");
+
+let allData;
 
 function getData() {
   fetch(endpoint)
     .then((res) => res.json())
-    .then(showData);
+    .then((data) => {
+      allData = data;
+      showProducts(allData);
+    });
 }
 
-function showData(json) {
+function filter(e) {
+  const valgt = e.target.textContent;
+
+  if (valgt === "All") {
+    showProducts(allData);
+  } else {
+    const udsnit = allData.filter((element) => element.gender === valgt);
+    showProducts(udsnit);
+  }
+}
+
+function showProducts(json) {
   console.table(json);
   let markup = "";
   json.forEach((element) => {
